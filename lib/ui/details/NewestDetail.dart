@@ -2,11 +2,12 @@ import 'dart:developer';
 
 import "package:flutter/material.dart";
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mynote/model/article_model.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class NewestDetail extends StatefulWidget {
-  NewestDetail({Key key, this.image, this.index}) : super(key: key);
-  final String image;
+  NewestDetail({Key key, this.item, this.index}) : super(key: key);
+  final Article item;
   final int index;
 
   @override
@@ -14,15 +15,13 @@ class NewestDetail extends StatefulWidget {
 }
 
 class _NewestDetailState extends State<NewestDetail> {
-  var test = "Momentum is also one of the nature that we can make use of. If we continuously cultivate a wholesome quality of mind, that wholesome quality will become stronger; and it will come more naturally to the mind. It will become a habit of the mind, and it can become a power of the mind. That’s what I call momentum.\n" +
+  var test = "Tại sao bạn  sống? Mục đích của cuộc đời bạn là gì? Điều gì xảy ra sau khi chết? Sớm hay muộn chúng ta cũng phải đối mặt với những câu hỏi này trong cuộc đời. Không phải là những câu hỏi để có thể trả lời dễ dàng… Tôi đố bạn suy nghĩ về cuộc đời mình và tương lai của bạn trong vòng một tuần\n" +
       "\n" +
-      "Something that we’re cultivating becomes strong enough to live on its own like the mindfulness remembering to remember on its own, the mindfulness coming naturally and having a momentum that it keeps remembering to be mindful without putting in the effort. And that’s momentum.\n" +
+      "Để giúp bạn suy nghĩ thì bạn sẽ tìm thấy 7 chủ đề trên trang web này. Hãy đầu tư một chút thời gian mỗi ngày trong tuần tiếp theo và tôi hy vọng rằng bạn sẽ có một khám phá quan trọng nhất trong cuộc đời mình, cũng giống như tôi đã khám phá ra\n" +
       "\n" +
-      "Understand this nature of how momentum can be gained so that we can relaxingly do something repeatedly to make it powerful.\n" +
+      "Bạn không phải đồng ý mọi lúc với những vấn đề được trình bày trên trang web này. Tôi hy vọng bạn đọc trang web một cách cởi mở và đưa ra ý kiến riêng. Nếu bạn không đồng ý, thì cứ đi tiếp và tự mình tìm hiểu sự thật. Điều này có thể rất có giá trị với cuộc đời bạn. Hãy dành một chút thời gian và đầu tư một tuần trong cuộc đời\n" +
       "\n" +
-      "If we do this for the wholesome qualities of the mind, they become paramis or perfections because we keep fulfilling the wholesome qualities of the mind until they become more powerful, more perfect.\n" +
-      "\n" +
-      "Momentum is the direct result of the fact that cause and effect is there. If every mind arose and passed away, and left nothing behind, then it would not be possible to grow any quality in the mind.";
+      "Vậy, nếu bạn muốn khám phá ý nghĩa của cuộc sống, xin hãy đọc tiếp…\n";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +45,7 @@ class _NewestDetailState extends State<NewestDetail> {
           ),
           leadingWidth: 100,
           title: Text(
-            "When the practice is ...",
+            widget.item.title,
             style: TextStyle(color: Colors.black),
           ),
           actions: [
@@ -79,7 +78,7 @@ class _NewestDetailState extends State<NewestDetail> {
                     child: FadeInImage.memoryNetwork(
                       // here `bytes` is a Uint8List containing the bytes for the in-memory image
                       placeholder: kTransparentImage,
-                      image: widget.image,
+                      image: widget.item.image,
                       fit: BoxFit.cover,
                       width: MediaQuery.of(context).size.width,
                       height: 215,
@@ -89,9 +88,7 @@ class _NewestDetailState extends State<NewestDetail> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 16, bottom: 10),
-                child: Text(
-                    "When the practice is correct, faith increases"
-                        .toUpperCase(),
+                child: Text(widget.item.title.toUpperCase(),
                     style: TextStyle(
                         color: Color(0xFF1A1A1A),
                         fontSize: 24,
@@ -100,8 +97,7 @@ class _NewestDetailState extends State<NewestDetail> {
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 16),
-                child: Text(
-                    "China Retreat 2014 Q&A (2 March 2014 AM; 1:03:44–1:05:30)",
+                child: Text("VN (2 December 2020 AM; 1:03:44–1:05:30)",
                     style: TextStyle(
                         color: Color(0xFF7D7D7D),
                         fontSize: 13,

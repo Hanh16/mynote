@@ -1,19 +1,28 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:mynote/model/article_model.dart';
 import 'package:mynote/ui/details/NewestDetail.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'dart:math' as math;
 
 class NewestItem extends StatelessWidget {
-  const NewestItem(this.image, this.index);
+  const NewestItem(this.item, this.index);
 
-  final String image;
+  final Article item;
 
   final int index;
 
   @override
   Widget build(BuildContext context) {
+    var time = ["10:20", "20:50", "05:50", "01:22", "22:22"];
+    var category = [
+      "Confidence",
+      "Effort",
+      "Awareness 1",
+      "Stability",
+      "Wisdom Overview 1"
+    ];
     return Container(
       child: InkWell(
         onTap: () {
@@ -21,7 +30,7 @@ class NewestItem extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (BuildContext context) {
-                return NewestDetail(image: this.image, index: this.index);
+                return NewestDetail(item: this.item, index: this.index);
               },
             ),
           );
@@ -38,7 +47,7 @@ class NewestItem extends StatelessWidget {
                       child: FadeInImage.memoryNetwork(
                         // here `bytes` is a Uint8List containing the bytes for the in-memory image
                         placeholder: kTransparentImage,
-                        image: image,
+                        image: item.image,
                         fit: BoxFit.cover,
                         width: double.infinity,
                         height: 225,
@@ -61,7 +70,7 @@ class NewestItem extends StatelessWidget {
                   // ),
                   Positioned(
                       child: Text(
-                        "20:10",
+                        time[math.max(index, 0)],
                         style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.bold),
                       ),
@@ -79,7 +88,7 @@ class NewestItem extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
                               vertical: 2, horizontal: 3),
-                          child: Text("Effort",
+                          child: Text(category[math.max(index, 0)],
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.normal)),
@@ -91,7 +100,7 @@ class NewestItem extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Text("WHEN THE PRACTICE IS CORRECT, FAITH INCR...",
+            Text(item.title.toUpperCase(),
                 style: TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: 13,

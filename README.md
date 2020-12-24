@@ -14,9 +14,13 @@ Xây dựng ứng dụng My articles
 ### Màn hình trang chủ 
 ![App UI](/assets/images/home.png)
 
+
+
 ### Màn hình xem nội dung chi tiết của bài đăng 
 ![App UI](/assets/images/detail.png)
 
+
+
 ### Các màn hình tạo , chỉnh sửa , xoá 
 ![App UI](/assets/images/add.png)
-![App UI](/assets/images/edit_delete.png)
+![App UI](/assets/images/edit.png)

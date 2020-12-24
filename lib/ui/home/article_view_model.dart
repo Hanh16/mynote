@@ -108,4 +108,9 @@ class ArticleViewModel extends BaseViewModel {
     editingItem = null;
     notifyListeners();
   }
+
+  void deleteItem(item) {
+    print(item.id);
+    repo.delete(item);
+  }
 }

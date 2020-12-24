@@ -33,6 +33,22 @@ class ArticleView extends StatelessWidget {
                             fontWeight: FontWeight.bold))
                   ],
                 ),
+                actions: [
+                  IconButton(
+                    icon: SvgPicture.asset(
+                      'assets/icons/Search.svg',
+                      color: Color(0xFF1A1A1A),
+                    ),
+                    onPressed: () {},
+                  ),
+                  IconButton(
+                    icon: SvgPicture.asset(
+                      'assets/icons/Bell.svg',
+                      color: Color(0xFF1A1A1A),
+                    ),
+                    onPressed: () {},
+                  ),
+                ],
               ),
               body: StaggeredGridView.countBuilder(
                 crossAxisCount: 4,

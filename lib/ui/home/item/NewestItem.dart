@@ -15,13 +15,14 @@ class NewestItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var time = ["10:20", "20:50", "05:50", "01:22", "22:22"];
+    var time = ["10:20", "20:50", "05:50", "01:22", "22:22", "00:00"];
     var category = [
       "Confidence",
       "Effort",
-      "Awareness 1",
+      "Awareness",
       "Stability",
-      "Wisdom Overview 1"
+      "Wisdom",
+      "Free"
     ];
     return Container(
       child: InkWell(
@@ -70,7 +71,7 @@ class NewestItem extends StatelessWidget {
                   // ),
                   Positioned(
                       child: Text(
-                        time[math.max(index, 0)],
+                        time[math.min(index, 5)],
                         style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.bold),
                       ),
@@ -88,7 +89,7 @@ class NewestItem extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
                               vertical: 2, horizontal: 3),
-                          child: Text(category[math.max(index, 0)],
+                          child: Text(category[math.min(index, 5)],
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.normal)),

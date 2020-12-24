@@ -9,5 +9,9 @@ Xây dựng ứng dụng My articles
 - Xoá bài đăng 
 - Chỉnh sửa bài đăng
 - Ngoài ra còn có các chức năng như tìm kiếm, thông báo,..
+### My articles App UI
 
 ![App UI](/assets/images/home.png)
+![App UI](/assets/images/detail.png)
+![App UI](/assets/images/add.png)
+![App UI](/assets/images/edit-delete.png)

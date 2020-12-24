@@ -9,9 +9,14 @@ Xây dựng ứng dụng My articles
 - Xoá bài đăng 
 - Chỉnh sửa bài đăng
 - Ngoài ra còn có các chức năng như tìm kiếm, thông báo,..
-### My articles App UI
-
+## My articles App UI
+ 
+### Màn hình trang chủ 
 ![App UI](/assets/images/home.png)
+
+### Màn hình xem nội dung chi tiết của bài đăng 
 ![App UI](/assets/images/detail.png)
+
+### Các màn hình tạo , chỉnh sửa , xoá 
 ![App UI](/assets/images/add.png)
 ![App UI](/assets/images/edit_delete.png)

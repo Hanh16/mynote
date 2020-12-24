@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mynote/ui/details/NewestAdd.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 import 'item/NewestItem.dart';
@@ -153,7 +154,16 @@ class _MyHomePageState extends State<MyHomePage>
         width: 65.0,
         child: FittedBox(
           child: FloatingActionButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return NewestAdd();
+                  },
+                ),
+              );
+            },
             child: Icon(
               Icons.add,
               color: Colors.white,

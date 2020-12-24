@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:mynote/screen/details/NewestDetail.dart';
+import 'package:mynote/ui/details/NewestDetail.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'dart:math' as math;
 

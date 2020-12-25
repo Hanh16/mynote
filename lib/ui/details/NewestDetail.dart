@@ -3,6 +3,7 @@ import 'dart:developer';
 import "package:flutter/material.dart";
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mynote/model/article_model.dart';
+import 'package:mynote/ui/details/NewestEdit.dart';
 import 'package:mynote/ui/home/article_view_model.dart';
 import 'package:stacked/stacked.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -53,6 +54,25 @@ class _NewestDetailState extends State<NewestDetail> {
               ),
               actions: [
                 PopupMenuButton<int>(
+                  onSelected: (selection) {
+                    switch (selection) {
+                      case 1:
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) {
+                              return NewestEdit();
+                            },
+                          ),
+                        );
+                        break;
+                      case 2:
+                        model.deleteItem(widget.item);
+                        Navigator.pop(context);
+                        break;
+                      default:
+                    }
+                  },
                   icon: SvgPicture.asset('assets/icons/popup.svg',
                       width: 20, height: 20, color: Colors.black),
                   itemBuilder: (context) => [
@@ -62,12 +82,7 @@ class _NewestDetailState extends State<NewestDetail> {
                     ),
                     PopupMenuItem(
                       value: 2,
-                      child: InkWell(
-                        child: Text("Delete"),
-                        onTap: () {
-                          model.deleteItem(widget.item);
-                        },
-                      ),
+                      child: Text("Delete"),
                     ),
                   ],
                 )
